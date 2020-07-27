@@ -1,7 +1,25 @@
 const { ipcRenderer } = require('electron')
-console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
 
-ipcRenderer.on('asynchronous-reply', (event, arg) => {
+ipcRenderer.on('lbl', (event, arg) => {
   console.log(arg) // prints "pong"
+  printLabel(">"+ arg+"<");
 })
-ipcRenderer.send('asynchronous-message', 'ping')
+
+// ipcRenderer.send('asynchronous-message', 'ping')
+
+function setWind()
+{
+  console.log("set");
+  ipcRenderer.send('set');
+}
+
+function sendKey()
+{
+  console.log("send");
+  ipcRenderer.send("send");
+}
+
+function printLabel(s)
+{
+  document.getElementById("lbl").innerHTML = s;
+}
