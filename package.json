@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Phyberosis/Autokeys2#readme",
   "devDependencies": {
-    "electron": "^9.1.1"
+    "electron": "^18.3.7"
   },
   "dependencies": {
     "win32-api": "^9.5.0"
